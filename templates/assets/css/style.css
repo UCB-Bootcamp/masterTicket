@@ -1,0 +1,25 @@
+.container {
+    max-width: 98%;
+}
+
+
+/* NAVIGATION */
+.nav-padded {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+nav h1 {
+    font-size: ;
+}
+
+nav i {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
