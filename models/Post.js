@@ -1,7 +1,38 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {}
+class Post extends Model {
+    static attend(body, models) {
+        return models.Attend.create({
+            user_id: body.user_id,
+            post_id: body.post_id
+         }).then(() => {
+             return Post.findOne({
+                 where: {
+                     id: body.post_id
+                 },
+                 attributes: [
+                    'id',
+                    'event_title',
+                    'venue',
+                    'city',
+                    'band',
+                    'genre',
+                    'event_description',
+                    'created_at',
+                    [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
+                    'attend_events']
+                ],
+                include: [
+                    {
+                        model: models.User,
+                        attributes: ['username']
+                    }
+                ] 
+             })
+         })
+    }
+};
 
 Post.init(
     {

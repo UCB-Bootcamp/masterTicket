@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } =  require('../../models');
+const { User, Post, Attend } =  require('../../models');
 const { sequelize } = require('../../models/User');
 
 // get all posts
@@ -92,6 +92,13 @@ router.post('/', (req, res) => {
       });
 });
 
+// attending an event
+router.put('/attend', (req, res) => {
+    Post.attend(req.body, {Attend, User})
+    .then(dbAttendData => res.json(dbAttendData))
+    .catch(err => res.status(500).json(err));
+});
+
 // update a post
 router.put('/:id', (req, res) => {
     Post.update(
@@ -137,5 +144,6 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => res.status(500).json(err));
 });
+
 
 module.exports = router;
