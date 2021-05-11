@@ -47,9 +47,17 @@ router.get('/:id', (req, res) => {
         ]
     })
     .then(dbPostData => {
-        res.json(dbPostData);
-    })
-});
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+          }
+          res.json(dbPostData);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    });
 
 // add a post
 router.post('/', (req, res) => {
@@ -65,6 +73,10 @@ router.post('/', (req, res) => {
         user_id: req.body.user_id
     })
     .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // update a post
