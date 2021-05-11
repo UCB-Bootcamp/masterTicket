@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote } =  require('../../models');
+const { User, Post, Attend } =  require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -79,6 +79,13 @@ router.post('/', (req, res) => {
       });
 });
 
+// attending an event
+router.put('/attend', (req, res) => {
+    Post.attend(req.body, {Attend, User})
+    .then(dbAttendData => res.json(dbAttendData))
+    .catch(err => res.status(500).json(err));
+});
+
 // update a post
 router.put('/:id', (req, res) => {
     Post.update(
@@ -124,5 +131,6 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => res.status(500).json(err));
 });
+
 
 module.exports = router;
