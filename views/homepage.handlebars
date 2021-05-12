@@ -1,28 +1,60 @@
 <ol class="post-list">
   {{#each posts as |post|}}
   <li>
-    <article class="post">
-      <div class="title">
-        {{post.event_title}}
-        <br>
-        {{post.band}}
-        <br>
-        {{post.genre}}
-        <br>
-        {{post.venue}}
-        <br>
-        {{post.event_description}}
-        <br>
-        {{post.city}}
-        <br>
-        {{post.staff_pick}}
-        <br>
-        {{post.date}}   
-        <br>
-        {{}}     
-      </div>
-
-    </article>
+    <div class="row">
+      <div class="col event-card-graphic">
+        <div class="card">
+          <img class="card-img-top" src="./assets/pictures/concert1.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">{{ event_title }}, {{ band }}, {{ genre }}, {{ venue }}, {{ event_description }}, {{
+              city }}, {{ staff_pick }}, {{ date }}</p>
+          </div>
+        </div>
   </li>
   {{/each}}
 </ol>
+
+
+<section class="container" id="featured">
+  <row class="header">
+    <h5 class="text-center">--featured--</h5>
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/pictures/concert1.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert2.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert3.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert4.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert5.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert6.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert7.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/pictures/concert8.jpeg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </row>
+</section>
