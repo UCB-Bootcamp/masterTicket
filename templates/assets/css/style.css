@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6, p, li, i {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 a:hover {
@@ -24,6 +25,7 @@ a:hover {
 .card {
     background-color: #323336;
     border-radius: 0px;
+    width: 18rem;
 }
 
 .card-img-top {
@@ -79,6 +81,13 @@ footer ul li a {
     text-decoration:none;
 }
 
+footer .social-btn button {
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: #323336;
+}
+}
+
     .btn-footer {
         color: white;
         text-decoration: none;
@@ -132,6 +141,8 @@ footer ul li a {
         padding-bottom: 15px;
     }
 
+/* LOGIN */
+
 /* LOGO */
 .logo-part {
     border-right: 1px solid grey;
@@ -165,97 +176,210 @@ nav ul li {
     padding-right: 15px;
 }
 
+/* POSTS */
+.main_card {
+    color: #323336;
+    width: 760px;
+    height: 390px;
+    margin: 50px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 770px;
+    background: #323336; 
+}
+
+.card_left {
+    width: 90%;
+}
+
+.card_datails {
+    width: 90%;
+    padding-left: 30px;
+    margin-top: 25px;
+}
+
+.card_datails  h1 {
+    font-size: 30px;
+}
+
+.card_right img {
+    height: 390px;
+}
+
+.card_cat {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.PG, .year, .genre, .time {
+    color: fff;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+.PG {
+    background: #3c3c3c;
+    -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    -webkit-transition: 300ms ease-in-out;
+}
+
+.disc {
+    font-weight: 100;
+    line-height: 27px;
+}
+
+.social-btn {
+    margin-left: -10px;
+}
+
+.social-btn button {
+    color: #fff;
+    border: none;
+    padding: 20px;
+    outline: none;
+    font-size: 12px;
+    margin-top: 30px;
+    margin-left: 10px;
+    background: #3c3c3c;
+    -webkit-transition: 300ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
+}
+
+.social-btn button:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.play_btn {
+    height: 100%;
+    margin: -390px auto;
+    position: relative;
+    text-align: center;
+    background: rgba(0, 244, 170,0.4);
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+.bi-play-circle {
+    color: #255;
+    font-size: 160px;
+    margin-top: 110px;
+}
+
 /* SECTION */
 section {
     padding-bottom: 20px;
     padding-top: 20px;
 }
 
+/* TEAM SECTION */
 .team-boxed {
-  color:#313437;
+    color:#313437;
 }
 
 .team-boxed p {
-  color:#7d8285;
+    color:#7d8285;
 }
 
 .team-boxed h2 {
-  font-weight:bold;
-  margin-bottom:40px;
-  padding-top:40px;
-  color:inherit;
-}
-
-@media (max-width:767px) {
-  .team-boxed h2 {
-    margin-bottom:25px;
-    padding-top:25px;
-    font-size:24px;
-  }
+    font-weight:bold;
+    margin-bottom:40px;
+    padding-top:40px;
+    color:inherit;
 }
 
 .team-boxed .intro {
-  font-size:16px;
-  max-width:500px;
-  margin:0 auto;
+    font-size:16px;
+    max-width:500px;
+    margin:0 auto;
 }
 
 .team-boxed .intro p {
-  margin-bottom:0;
+    margin-bottom:0;
 }
 
 .team-boxed .people {
-  padding:50px 0;
+    padding:50px 0;
 }
 
 .team-boxed .item {
-  text-align:center;
+    text-align:center;
 }
 
 .team-boxed .item .box {
-  text-align:center;
-  padding:30px;
-  background-color:#fff;
-  margin-bottom:30px;
+    text-align:center;
+    padding:30px;
+    background-color:#fff;
+    margin-bottom:30px;
 }
 
 .team-boxed .item .name {
-  font-weight:bold;
-  margin-top:28px;
-  margin-bottom:8px;
-  color:inherit;
+    font-weight:bold;
+    margin-top:28px;
+    margin-bottom:8px;
+    color:inherit;
 }
 
 .team-boxed .item .title {
-  text-transform:uppercase;
-  font-weight:bold;
-  color:#d0d0d0;
-  letter-spacing:2px;
-  font-size:13px;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:#d0d0d0;
+    letter-spacing:2px;
+    font-size:13px;
 }
 
 .team-boxed .item .description {
-  font-size:15px;
-  margin-top:15px;
-  margin-bottom:20px;
+    font-size:15px;
+    margin-top:15px;
+    margin-bottom:20px;
 }
 
 .team-boxed .item img {
-  max-width:160px;
+    max-width:160px;
 }
 
 .team-boxed .social {
-  font-size:18px;
-  color:#a2a8ae;
+    font-size:18px;
+    color:#a2a8ae;
 }
 
 .team-boxed .social a {
-  color:inherit;
-  margin:0 10px;
-  display:inline-block;
-  opacity:0.7;
+    color:inherit;
+    margin:0 10px;
+    display:inline-block;
+    opacity:0.7;
 }
 
 .team-boxed .social a:hover {
-  opacity:1;
+    opacity:1;
+}
+
+
+/* MEDIA SCREENS */
+@media (max-width:767px) {
+    .team-boxed h2 {
+        margin-bottom:25px;
+        padding-top:25px;
+        font-size:24px;
+    }
+}
+
+@media only screen and (max-width: 636px) {
+
+    .card {
+        width: 100%;
+    }
+
+    .card-img-top {
+        height: auto;
+        width: auto;
+    }
 }
