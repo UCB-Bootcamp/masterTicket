@@ -28,10 +28,7 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbPostData => {
-        //console.log(dbPostData);
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { posts });
-        // res.json(dbPostData);
+         res.json(dbPostData);
     })
     .catch(err => {
         console.log(err);
