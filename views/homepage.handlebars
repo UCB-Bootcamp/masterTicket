@@ -1,0 +1,28 @@
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    <article class="post">
+      <div class="title">
+        {{post.event_title}}
+        <br>
+        {{post.band}}
+        <br>
+        {{post.genre}}
+        <br>
+        {{post.venue}}
+        <br>
+        {{post.event_description}}
+        <br>
+        {{post.city}}
+        <br>
+        {{post.staff_pick}}
+        <br>
+        {{post.date}}   
+        <br>
+        {{}}     
+      </div>
+
+    </article>
+  </li>
+  {{/each}}
+</ol>
