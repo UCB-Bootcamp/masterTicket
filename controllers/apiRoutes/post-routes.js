@@ -112,7 +112,7 @@ router.put('/:id', (req, res) => {
             genre: req.body.genre,
             event_description: req.body.event_description,
             staff_pick: req.body.staff_pick,
-            featured_event: req.body.event_description,
+            featured_event: req.body.featured_event,
             date: req.body.date,
             user_id: req.body.user_id
         },
