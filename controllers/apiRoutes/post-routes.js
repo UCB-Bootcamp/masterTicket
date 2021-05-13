@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Attend } =  require('../../models');
+const { sequelize } = require('../../models/User');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -12,18 +13,27 @@ router.get('/', (req, res) => {
             'band',
             'genre',
             'event_description',
-            'created_at'
+            'created_at'//,
+            //[sequelize.literal('(SELECT COUNT(*) FROM users WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+              model: User,
+              attributes: ['username']
             }
         ]
     })
     .then(dbPostData => {
-        res.json(dbPostData);
+         res.json(dbPostData);
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // get a single post
