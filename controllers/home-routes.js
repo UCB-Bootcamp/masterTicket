@@ -1,6 +1,8 @@
 const { Post, Attend } = require('../models');
 const router = require('express').Router();
+const path = require('path');
 
+// landing page
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -22,18 +24,23 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { 
-            posts
-            // loggedIn: req.session.loggedIn    
-        });
-        
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-  });
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            res.render('homepage', {
+                posts
+                // loggedIn: req.session.loggedIn    
+            });
 
-  module.exports = router;
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// login page
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../templates', 'login.html'));
+});
+
+module.exports = router;
