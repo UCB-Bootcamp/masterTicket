@@ -44,4 +44,10 @@ router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../templates', 'login.html'));
 });
 
+// add-event page - might turn into a modal?
+router.get('/add-event', (req, res) => {
+    // this is going to need to be updated when we get partials going
+    res.sendFile(path.join(__dirname, '../templates', 'form.html'));
+});
+
 module.exports = router;
