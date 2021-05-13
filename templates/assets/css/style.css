@@ -21,11 +21,11 @@ a:hover {
     max-width: 95%;
 }
 
-ul {
+/* ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
 /* CARD */
 .cards {
