@@ -40,6 +40,7 @@ router.get('/', (req, res) => {
 
 // login page
 router.get('/login', (req, res) => {
+    // this is going to need to be updated when we get partials going
     res.sendFile(path.join(__dirname, '../templates', 'login.html'));
 });
 
