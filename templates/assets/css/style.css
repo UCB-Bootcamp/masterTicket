@@ -360,7 +360,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
   color: #cbc6c1;
 }
 
-#form {
+.form {
   position: relative;
   width: 500px;
   margin: 50px auto 100px auto;
