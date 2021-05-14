@@ -73,3 +73,10 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  console.log('hello');
+  $( ".carousel-item" )
+  .first()
+  .addClass( "active" );
+});
