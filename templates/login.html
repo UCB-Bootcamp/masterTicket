@@ -28,62 +28,78 @@
 
     <body>
         <header>
-        	<nav class="container">
-        		<div class="row">
-        			<div class="col-1 nav-padded">
-        				<div class="row"><a href="#"><i class="bi bi-facebook"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-twitter"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-instagram"></i></a></div>
-        			</div>
-        			<div class="col-10 nav-padded">
-        				<div class="row text-center">
-        					<h1>masterTicket</h1>
-        				</div>
-        				<div class="row d-flex justify-content-around text-center">
-        					<ul>
-        						<li><a href="#new-events">new events</a></li>
-        						<li><a href="#featured">featured</a></li>
-        						<li><a href="#staff-picks">staff picks</a></li>
-        						<li><a href="#video">video</a></li>
-        					</ul>
-        				</div>
-        			</div>
-        			<div class="col-1 nav-padded">
-        				<div class="row"><a href="#"><i class="bi bi-list"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-headphones"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-search"></i></a></div>
-        			</div>
-        		</div>
-        	</nav>
+        	
         </header>
 
         <!-- Add your site or application content here -->
         <main>
-        	
-			<section>
-        		<div class="row">
-        			<div class="col">
-						<form class="form topBefore signup-form">
-				  			<input id="username-signup" type="text" placeholder="USERNAME">
-				  			<input id="email-signup" type="text" placeholder="EMAIL">
-				  			<input id="password-signup" type="password" placeholder="PASSWORD">
-		  					<input id="submit-signup" type="submit" value="GO!">
-						</form>
-					</div>
-				</div>
-        	</section>
+			<div class="container">
+		        <div class="row">
+					<div class="col-md-5 mx-auto">
+						<div id="first">
+							<div class="myform form ">
+								 <div class="logo mb-3">
+									 <div class="col-md-12 text-center">
+										<h1>Login</h1>
+									 </div>
+								</div>
+			                   <form action="" method="post" name="login">
+									<div class="form-group">
+										<label for="email-login">Email address</label>
+										<input type="email" name="email"  class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+									</div>
+									<div class="form-group">
+										<label for="password-login">Password</label>
+										<input type="password" name="password" id="password-login"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+									</div>
+									<div class="col-md-12 text-center ">
+										<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" id="btn-login">Login</button>
+									</div>
+									<div class="form-group">
+										<p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+									</div>
+			                    </form>
+							</div>
+						</div>
 
-        	<section>
-        		<div class="row">
-        			<div class="col">
-						<form class="form topBefore login-form">
-				  			<input id="email-login" type="text" placeholder="EMAIL">
-				  			<input id="password-login" type="password" placeholder="PASSWORD">
-		  					<input id="submit-login" type="submit" value="SIGN IN!">
-						</form>
+						<div id="second">
+						  <div class="myform form ">
+						        <div class="logo mb-3">
+						           <div class="col-md-12 text-center">
+						            	<h1 >Signup</h1>
+						           </div>
+						        </div>
+						        <form action="#" name="registration">
+						        	<div class="form-group">
+										<label for="user-full-name">Name</label>
+										<input type="text"  name="user-full-name" class="form-control" id="user-full-name" aria-describedby="emailHelp" placeholder="Enter Name">
+						           	</div>
+						           	<div class="form-group">
+										<label for="email-signup">Email</label>
+										<input type=""  name="email-signup" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter Email">
+						           	</div>
+						           	<div class="form-group">
+										<label for="username-signup">Username</label>
+										<input type="text" name="username-signup"  class="form-control" id="username-signup" aria-describedby="emailHelp" placeholder="Enter Username">
+						           	</div>
+						           	<div class="form-group">
+										<label for="password-signup">Password</label>
+										<input type="password" name="password-signup" id="password-signup"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+						           	</div>
+						           	<div class="col-md-12 text-center mb-3">
+						           		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+						           	</div>
+						           	<div class="col-md-12 ">
+						              	<div class="form-group">
+						                 	<p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+						              	</div>
+						           	</div>
+			                    </form>
+			                </div>
+						</div>
 					</div>
-				</div>
-        	</section>
+		   		</div>
+			</div>		
         </main>
 
         <!-- DO NOT IGNORE THIS SECTION -->
@@ -91,6 +107,9 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="./assets/js/script.js"></script>
+
         <!-- DID YOU REMEMBER THIS SECTION? -->
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
