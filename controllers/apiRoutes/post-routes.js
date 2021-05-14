@@ -88,7 +88,7 @@ router.post('/', (req, res) => {
         staff_pick: req.body.staff_pick,
         featured_event: req.body.featured_event,
         date: req.body.date,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -117,7 +117,7 @@ router.put('/:id', (req, res) => {
             staff_pick: req.body.staff_pick,
             featured_event: req.body.featured_event,
             date: req.body.date,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         },
         {
         where: {

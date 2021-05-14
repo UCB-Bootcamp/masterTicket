@@ -2,7 +2,9 @@ const { Post, Attend } = require('../models');
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 
+// landing page
 router.get('/', (req, res) => {
+    console.log(req.session)
     Post.findAll({
         attributes: [
             'id',
@@ -23,19 +25,34 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { 
-            posts
-            // loggedIn: req.session.loggedIn    
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            res.render('homepage', {
+                posts,
+                loggedIn: req.session.loggedIn    
+            });
+
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-        
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-  });
+});
+
+// login page
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+// add-event page - might turn into a modal?
+router.get('/add-event', (req, res) => {
+    // this is going to need to be updated when we get partials going
+    res.sendFile(path.join(__dirname, '../templates', 'form.html'));
+});
 
   router.get('/post/:id', (req, res) => {
       Post.findOne({
@@ -82,4 +99,5 @@ router.get('/', (req, res) => {
       });
   });
 
-  module.exports = router;
+module.exports = router;
+
