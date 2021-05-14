@@ -28,17 +28,25 @@
 
     <body>
         <header>
-        	
+        	<div class="container login-top">
+        		<div class="row">
+        			<div class="col-12 nav-padded">
+        				<div class="row text-center">
+        					<h1>Welcome to masterTicket</h1>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
         </header>
 
         <!-- Add your site or application content here -->
         <main>
 			<div class="container">
-		        <div class="row">
+		        <div class="row login">
 					<div class="col-md-5 mx-auto">
 						<div id="first">
-							<div class="myform form ">
-								 <div class="logo mb-3">
+							<div class="login-form form">
+								 <div class="mb-3">
 									 <div class="col-md-12 text-center">
 										<h1>Login</h1>
 									 </div>
@@ -52,18 +60,17 @@
 										<label for="password-login">Password</label>
 										<input type="password" name="password" id="password-login"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
 									</div>
-									<div class="col-md-12 text-center ">
-										<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" id="btn-login">Login</button>
-									</div>
-									<div class="form-group">
-										<p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+									<div class="col-md-12 text-center social-btn">
+										<button type="submit" class="tx-tfm" id="btn-login">Login</button>
 									</div>
 			                    </form>
 							</div>
 						</div>
+					</div>
 
+					<div class="col-md-5 mx-auto">
 						<div id="second">
-						  <div class="myform form ">
+						  <div class="login-form form ">
 						        <div class="logo mb-3">
 						           <div class="col-md-12 text-center">
 						            	<h1 >Signup</h1>
@@ -71,28 +78,19 @@
 						        </div>
 						        <form action="#" name="registration">
 						        	<div class="form-group">
-										<label for="user-full-name">Name</label>
-										<input type="text"  name="user-full-name" class="form-control" id="user-full-name" aria-describedby="emailHelp" placeholder="Enter Name">
+										<label for="username-signup">Username</label>
+										<input type="text" name="username-signup"  class="form-control" id="username-signup" aria-describedby="emailHelp" placeholder="Enter Username">
 						           	</div>
 						           	<div class="form-group">
 										<label for="email-signup">Email</label>
 										<input type=""  name="email-signup" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter Email">
 						           	</div>
 						           	<div class="form-group">
-										<label for="username-signup">Username</label>
-										<input type="text" name="username-signup"  class="form-control" id="username-signup" aria-describedby="emailHelp" placeholder="Enter Username">
-						           	</div>
-						           	<div class="form-group">
 										<label for="password-signup">Password</label>
 										<input type="password" name="password-signup" id="password-signup"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
 						           	</div>
-						           	<div class="col-md-12 text-center mb-3">
-						           		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
-						           	</div>
-						           	<div class="col-md-12 ">
-						              	<div class="form-group">
-						                 	<p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
-						              	</div>
+						           	<div class="col-md-12 text-center mb-3 social-btn">
+						           		<button type="submit" class="social-btn tx-tfm">Sign Up!</button>
 						           	</div>
 			                    </form>
 			                </div>

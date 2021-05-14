@@ -286,64 +286,41 @@ footer .social-btn button {
     }
 
 /* LOGIN */
-.myform{
-        position: relative;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 1rem;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        width: 100%;
-        pointer-events: auto;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid rgba(0,0,0,.2);
-        border-radius: 1.1rem;
-        outline: 0;
-        max-width: 500px;
-         }
-         .tx-tfm{
-         text-transform:uppercase;
-         }
-         .mybtn{
-         border-radius:50px;
-         }
-        
-         .login-or {
-         position: relative;
-         color: #aaa;
-         margin-top: 10px;
-         margin-bottom: 10px;
-         padding-top: 10px;
-         padding-bottom: 10px;
-         }
-         .span-or {
-         display: block;
-         position: absolute;
-         left: 50%;
-         top: -2px;
-         margin-left: -25px;
-         background-color: #fff;
-         width: 50px;
-         text-align: center;
-         }
-         .hr-or {
-         height: 1px;
-         margin-top: 0px !important;
-         margin-bottom: 0px !important;
-         }
-         .google {
-         color:#666;
-         width:100%;
-         height:40px;
-         text-align:center;
-         outline:none;
-         border: 1px solid lightgrey;
-         }
-          form .error {
-         color: #ff0000;
-         }
-         /* #second{display:none;} */
+.login-top {
+    padding-bottom: 70px;
+}
+
+.login-form {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: 1px solid rgba(255,255,255,1);
+    outline: 0;
+    max-width: 500px;
+    min-height: 395px;
+}
+
+.login-form label {
+    color: white;
+}
+
+ .login .social-btn button {
+    background-color: #323336;
+ }
+
+.tx-tfm {
+    text-transform:uppercase;
+}
+
+form .error {
+    color: #ff0000;
+}
 
 /* LOGO */
 .logo-part {
@@ -434,7 +411,7 @@ nav ul li {
     line-height: 27px;
 }
 
-.social-btn {
+.social-btn-left {
     margin-left: -10px;
 }
 
@@ -551,3 +528,8 @@ stafftion {
     background-color: #323336;
  }
 
+@media only screen and (max-width: 767px) {
+    #second {
+        padding-top: 30px;
+    }
+}
