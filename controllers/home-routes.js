@@ -4,6 +4,7 @@ const path = require('path');
 
 // landing page
 router.get('/', (req, res) => {
+    console.log(req.session)
     Post.findAll({
         attributes: [
             'id',
@@ -27,8 +28,8 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('homepage', {
-                posts
-                // loggedIn: req.session.loggedIn    
+                posts,
+                loggedIn: req.session.loggedIn    
             });
 
         })
