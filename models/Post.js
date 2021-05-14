@@ -19,6 +19,7 @@ class Post extends Model {
                     'band',
                     'genre',
                     'event_description',
+                    'featured_event',
                     'created_at',
                     [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
                     'attend_events']
@@ -75,6 +76,10 @@ Post.init(
             allowNull: false
         },
         staff_pick: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        featured_event: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },

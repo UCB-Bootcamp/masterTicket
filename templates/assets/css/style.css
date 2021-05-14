@@ -392,21 +392,21 @@ nav ul li {
             justify-content: space-between;
 }
 
-.PG, .year, .genre, .time {
+.venue, .date, .genre, .city {
     color: fff;
     padding: 10px;
     font-weight: bold;
 
 }
 
-.PG {
+.venue {
     background: #3c3c3c;
     -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.1);
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
     -webkit-transition: 300ms ease-in-out;
 }
 
-.disc {
+.desc {
     font-weight: 100;
     line-height: 27px;
 }
