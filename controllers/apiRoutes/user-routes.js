@@ -46,6 +46,7 @@ router.get('/:id', (req, res) => {
 	});
 });
 
+// login
 router.post('/login', (req, res) => {
 	// expects {email: 'lernantino@gmail.com', password: 'password1234'}
 	User.findOne({
@@ -68,7 +69,7 @@ router.post('/login', (req, res) => {
 	});
   });
 
-// Post Users
+// add new user
 router.post('/', (req, res) => {
 	User.create({
 		username: req.body.username,
