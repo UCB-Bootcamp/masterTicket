@@ -4,6 +4,7 @@ const path = require('path');
 
 // landing page
 router.get('/', (req, res) => {
+    console.log(req.session)
     Post.findAll({
         attributes: [
             'id',
@@ -27,8 +28,8 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('homepage', {
-                posts
-                // loggedIn: req.session.loggedIn    
+                posts,
+                loggedIn: req.session.loggedIn    
             });
 
         })
@@ -40,8 +41,11 @@ router.get('/', (req, res) => {
 
 // login page
 router.get('/login', (req, res) => {
-    // this is going to need to be updated when we get partials going
-    res.sendFile(path.join(__dirname, '../templates', 'login.html'));
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
 });
 
 // add-event page - might turn into a modal?
