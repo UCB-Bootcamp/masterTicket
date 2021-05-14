@@ -1,18 +1,38 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    <div class="row">
-      <div class="col event-card-graphic">
-        <div class="card">
-          <img class="card-img-top" src="./assets/pictures/concert1.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">{{ event_title }}, {{ band }}, {{ genre }}, {{ venue }}, {{ event_description }}, {{
-              city }}, {{ staff_pick }}, {{ date }}</p>
-          </div>
+<section class="container">
+  <div class="row">
+    <h5 class="main-title text-center">--new events--</h5>
+      {{#each posts as |post|}}
+      <div class="cards col-md-6 col-lg-3 ">
+          <article class="card">
+            <div class="card-info-hover">
+              <i class="bi bi-heart"></i>
+              <div class="card-clock-info">
+                <i class="bi bi-clock"></i>
+                <span class="card-time">{{ date }}</span>
+              </div>
+              <div class="goto">
+                <button>checkout post</button>
+              </div>
+            </div>
+            <div class="card-img">
+              <img src="./assets/pictures/concert1.jpeg" />
+            </div>
+            <div class="card-img-hover">
+              <img src="./assets/pictures/concert1.jpeg" />
+            </div>
+            <div class="card-info">
+              <span class="card-category">{{ band }}</span>
+              <h3 class="card-title">{{ event_title }}</h3>
+              <span class="card-by">at <a href="#" class="card-author" title="author">{{ venue }}</a></span>
+            </div>
+          </article>
         </div>
-  </li>
-  {{/each}}
-</ol>
+      {{/each}}
+  </div>
+</section>
+
+
+
 
 
 <section class="container" id="featured">

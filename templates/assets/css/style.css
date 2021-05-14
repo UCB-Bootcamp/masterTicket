@@ -21,9 +21,11 @@ a:hover {
     max-width: 95%;
 }
 
-.header {
-    padding-top: 15px;
-}
+/* ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+} */
 
 /* CARD */
 .cards {
@@ -482,7 +484,7 @@ nav ul li {
     display: -ms-flexbox;
     display: flex;
     max-width: 770px;
-    background: #323336; 
+    background: #323336;
 }
 
 .post-left {
