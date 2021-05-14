@@ -1,6 +1,8 @@
 const { Post, Attend } = require('../models');
 const router = require('express').Router();
+const path = require('path');
 
+// landing page
 router.get('/', (req, res) => {
     console.log(req.session)
     Post.findAll({
@@ -23,18 +25,30 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { 
-            posts,
-            loggedIn: req.session.loggedIn    
-        });
-        
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-  });
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            res.render('homepage', {
+                posts,
+                loggedIn: req.session.loggedIn    
+            });
 
-  module.exports = router;
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// login page
+router.get('/login', (req, res) => {
+    // this is going to need to be updated when we get partials going
+    res.sendFile(path.join(__dirname, '../templates', 'login.html'));
+});
+
+// add-event page - might turn into a modal?
+router.get('/add-event', (req, res) => {
+    // this is going to need to be updated when we get partials going
+    res.sendFile(path.join(__dirname, '../templates', 'form.html'));
+});
+
+module.exports = router;
