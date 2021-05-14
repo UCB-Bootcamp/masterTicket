@@ -53,6 +53,9 @@ router.get('/:id', (req, res) => {
             'featured_event',
             'created_at'
         ],
+        where: { 
+            id: req.params.id
+        },
         include: [
             {
                 model: User,
