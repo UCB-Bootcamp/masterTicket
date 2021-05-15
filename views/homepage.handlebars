@@ -44,9 +44,11 @@
   <row class="header">
     <div class="staff">
       <h5 class="text-center">--staff picks--</h5>
+      <div>
       {{#each posts as |post|}}
-        {{> staff-pick post }}
+        {{> staff-picks post }}
       {{/each}}
+      </div>
     </div>
   </row>
 </section>
