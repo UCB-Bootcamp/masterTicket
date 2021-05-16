@@ -562,6 +562,7 @@ stafftion {
 }
 
 /* DASHBOARD */
+
 .new-post-form {
     width: 50%;
 }
@@ -574,4 +575,8 @@ stafftion {
     color: white;
     padding: 0;
     margin: 0;
+}
+
+.row.dashboard-posts {
+   margin: 0 auto;
 }
