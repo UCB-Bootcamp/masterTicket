@@ -551,3 +551,7 @@ stafftion {
     background-color: #323336;
  }
 
+#staff-picks {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
