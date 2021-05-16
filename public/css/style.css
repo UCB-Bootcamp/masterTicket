@@ -377,13 +377,12 @@ nav ul li {
 /* POSTS */
 .main-post {
     color: #323336;
-    width: 760px;
-    height: 390px;
+    min-height: 390px;
     margin: 50px auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 770px;
+    max-width: 75%;
     background: #323336;
 }
 
@@ -415,26 +414,26 @@ nav ul li {
             justify-content: space-between;
 }
 
-.PG, .year, .genre, .time {
+.venue, .date, .genre, .city {
     color: fff;
     padding: 10px;
     font-weight: bold;
 
 }
 
-.PG {
+.venue {
     background: #3c3c3c;
     -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.1);
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
     -webkit-transition: 300ms ease-in-out;
 }
 
-.disc {
+.desc {
     font-weight: 100;
     line-height: 27px;
 }
 
-.social-btn {
+.social-btn-left {
     margin-left: -10px;
 }
 
@@ -470,6 +469,10 @@ nav ul li {
     color: #255;
     font-size: 160px;
     margin-top: 110px;
+}
+
+.post-details .social-btn {
+    margin-bottom: 30px
 }
 
 /* staffTION */

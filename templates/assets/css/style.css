@@ -354,13 +354,12 @@ nav ul li {
 /* POSTS */
 .main-post {
     color: #323336;
-    width: 760px;
-    height: 390px;
+    min-height: 390px;
     margin: 50px auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 770px;
+    max-width: 65%;
     background: #323336;
 }
 
@@ -447,6 +446,10 @@ nav ul li {
     color: #255;
     font-size: 160px;
     margin-top: 110px;
+}
+
+.post-details .social-btn {
+    margin-bottom: 30px
 }
 
 /* staffTION */
