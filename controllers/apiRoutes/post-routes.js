@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
             'band',
             'genre',
             'event_description',
+            'staff_pick',
+            'featured_event',
             'created_at'//,
             //[sequelize.literal('(SELECT COUNT(*) FROM users WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -47,8 +49,13 @@ router.get('/:id', (req, res) => {
             'band',
             'genre',
             'event_description',
+            'staff_pick',
+            'featured_event',
             'created_at'
         ],
+        where: { 
+            id: req.params.id
+        },
         include: [
             {
                 model: User,
@@ -79,8 +86,9 @@ router.post('/', (req, res) => {
         genre: req.body.genre,
         event_description: req.body.event_description,
         staff_pick: req.body.staff_pick,
+        featured_event: req.body.featured_event,
         date: req.body.date,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -107,8 +115,9 @@ router.put('/:id', (req, res) => {
             genre: req.body.genre,
             event_description: req.body.event_description,
             staff_pick: req.body.staff_pick,
+            featured_event: req.body.featured_event,
             date: req.body.date,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         },
         {
         where: {
