@@ -580,3 +580,8 @@ stafftion {
 .row.dashboard-posts {
    margin: 0 auto;
 }
+
+.list-group-item {
+    background-color: #323336;
+    color: #fff;
+}
