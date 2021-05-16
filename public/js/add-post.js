@@ -8,9 +8,9 @@ async function newFormHandler(event) {
     const band = document.querySelector('input[id="band"]').value;
     const genre = document.querySelector('input[id="genre"]').value;
     const date = document.querySelector('input[id="date"]').value;
-    const staff_pick = document.querySelector('input[id="staff-pick"]').value;
+    const staff_pick = document.querySelector('input[id="staff-pick"]').checked;
     const event_description = document.querySelector('textarea[id="event-description"]').value;
-
+    console.log(staff_pick);
     const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
@@ -28,8 +28,8 @@ async function newFormHandler(event) {
         }
     });
     if(response.ok) {
-        console.log('success');
-        // document.location.replace('/dashboard');
+        console.log('sucess')
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
