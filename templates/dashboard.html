@@ -28,73 +28,79 @@
 
     <body>
         <header>
-        	<nav class="container">
+        	<div class="container login-top">
         		<div class="row">
-        			<div class="col-1 nav-padded">
-        				<div class="row"><a href="#"><i class="bi bi-facebook"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-twitter"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-instagram"></i></a></div>
-        			</div>
-        			<div class="col-10 nav-padded">
+        			<div class="col-12 nav-padded">
         				<div class="row text-center">
-        					<h1>masterTicket</h1>
+        					<h1>Welcome to masterTicket</h1>
         				</div>
-        				<div class="row d-flex justify-content-around text-center">
-        					<ul>
-        						<li><a href="#new-events">new events</a></li>
-        						<li><a href="#featured">featured</a></li>
-        						<li><a href="#staff-picks">staff picks</a></li>
-        						<li><a href="#video">video</a></li>
-        					</ul>
-        				</div>
-        			</div>
-        			<div class="col-1 nav-padded">
-        				<div class="row"><a href="#"><i class="bi bi-list"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-headphones"></i></a></div>
-        				<div class="row"><a href="#"><i class="bi bi-search"></i></a></div>
         			</div>
         		</div>
-        	</nav>
+        	</div>
         </header>
 
         <!-- Add your site or application content here -->
         <main>
-        	
-        	<section>
-        		<div class="container">
-	        		<div class="row new-post-form">
-	        			<div class="justify-content-center col-md-6">
-							<form class="post-submit form">
-					  			<input id="event-title" type="text" placeholder="EVENT">
-					  			<br>
-					  			<input id="venue" type="text" placeholder="VENUE">
-					  			<br>
-					  			<input id="city" type="text" placeholder="CITY">
-					  			<br>
-					  			<input id="band" type="text" placeholder="BAND">
-					  			<br>
-					  			<input id="genre" type="text" placeholder="GENRE">
-					  			<br>
-					  			<input id="date" type="text" placeholder="DATE (ex. Oct 21, 2025)">
-								<br>
-					  			<textarea id="event-description" type="text" placeholder="EVENT DESCRIPTION"></textarea>
-					  			<br>
-					  			<input name="staff-pick" value="Staff Pick" id="staff-pick" type="checkbox" placeholder="STAFF PICK">
-								<label for="staff-pick">This Event is a Staff Pick!</label>
-								<br>
-								<div class="social-btn">
-									<button>
-                            			<i class="bi bi-arrow-right" id="submit" type="submit"></i>GO!
-                    				</button>
-							</form>
+			<div class="container">
+		        <div class="row login">
+					<div class="col-md-5 mx-auto">
+						<div id="first">
+							<div class="login-form form">
+								 <div class="mb-3">
+									 <div class="col-md-12 text-center">
+										<h1>Login</h1>
+									 </div>
+								</div>
+			                   <form action="" method="post" name="login">
+									<div class="form-group">
+										<label for="email-login">Email address</label>
+										<input type="email" name="email"  class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+									</div>
+									<div class="form-group">
+										<label for="password-login">Password</label>
+										<input type="password" name="password" id="password-login"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+									</div>
+									<div class="col-md-12 text-center social-btn">
+										<button type="submit" class="tx-tfm" id="btn-login">Login</button>
+									</div>
+			                    </form>
+							</div>
 						</div>
 					</div>
-				</div>
-        	</section>
 
+					<div class="col-md-5 mx-auto">
+						<div id="second">
+						  <div class="login-form form ">
+						        <div class="logo mb-3">
+						           <div class="col-md-12 text-center">
+						            	<h1 >Signup</h1>
+						           </div>
+						        </div>
+						        <form action="#" name="registration">
+						        	<div class="form-group">
+										<label for="username-signup">Username</label>
+										<input type="text" name="username-signup"  class="form-control" id="username-signup" aria-describedby="emailHelp" placeholder="Enter Username">
+						           	</div>
+						           	<div class="form-group">
+										<label for="email-signup">Email</label>
+										<input type=""  name="email-signup" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter Email">
+						           	</div>
+						           	<div class="form-group">
+										<label for="password-signup">Password</label>
+										<input type="password" name="password-signup" id="password-signup"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+						           	</div>
+						           	<div class="col-md-12 text-center mb-3 social-btn">
+						           		<button type="submit" class="social-btn tx-tfm">Sign Up!</button>
+						           	</div>
+			                    </form>
+			                </div>
+						</div>
+					</div>
+		   		</div>
+			</div>		
         </main>
 
-        <footer>
+		<footer>
         	<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -109,8 +115,14 @@
 							<div class="col-md-6 px-4">
 								<h6> about masterTicket</h6>
 								<p>Find out how we became so awesome at rocking!</p>
-								<a href="#" class="btn-footer"> more info </a><br>
-								<a href="#" class="btn-footer"> contact us</a>
+								<div class="social-btn">
+									<button>
+										<i class="bi bi-info-circle"></i>  more info
+									</button>
+									<button>
+											<i class="bi bi-telephone-forward"></i>  contact us
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -139,9 +151,6 @@
 									<div class="row">
 										<a href="#"><i class="bi bi-instagram"></i></a>
 									</div>
-									<div class="row">
-										<a href="#"><i class="bi bi-google"></i></a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -151,10 +160,13 @@
         </footer>
 
         <!-- DO NOT IGNORE THIS SECTION -->
-		<script src="/js/add-post.js"></script>
+		<script src="/js/login.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="./assets/js/script.js"></script>
+
         <!-- DID YOU REMEMBER THIS SECTION? -->
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

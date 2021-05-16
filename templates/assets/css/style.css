@@ -391,6 +391,14 @@ nav ul li {
             justify-content: space-between;
 }
 
+.post-submit input, .post-submit textarea {
+    width: 100%;
+}
+
+.post-submit label {
+    color: white;
+}
+
 .venue, .date, .genre, .city {
     color: fff;
     padding: 10px;
