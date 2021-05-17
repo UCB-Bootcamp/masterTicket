@@ -1,12 +1,11 @@
-// NOT CONNECTED TO FRONT END
-async function attendClickHandler(event) {
+async function attendClickHandler() {
     event.preventDefault();
-    const id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
+    const post_id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
 
     const response = await fetch('/api/posts/attend', {
         method: 'PUT',
         body: JSON.stringify({
-            post_id: id
+            post_id: post_id
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -14,11 +13,10 @@ async function attendClickHandler(event) {
     });
 
     if(response.ok) {
-        console.log('bleh');
         document.location.reload();
     } else {
         alert(response.statusText);
     }
 };
 
-document.querySelector('#attend').addEventListener('click', attendClickHandler);
+document.querySelector('.attend').addEventListener('click', attendClickHandler);

@@ -95,10 +95,16 @@ router.post('/', (req, res) => {
 
 // attending an event
 router.put('/attend', (req, res) => {
-    Post.attend(req.body, {Attend, User})
-    .then(dbAttendData => res.json(dbAttendData))
-    .catch(err => res.status(500).json(err));
-});
+    // make sure the session exists first
+    if (req.session) {
+      Post.attend({ ...req.body, user_id: req.session.user_id }, { Attend, User })
+        .then(updatedAttendData => res.json(updatedAttendData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    }
+  });
 
 // update a post
 router.put('/:id', (req, res) => {
