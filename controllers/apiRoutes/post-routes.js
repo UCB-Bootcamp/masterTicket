@@ -33,6 +33,37 @@ router.get('/', (req, res) => {
       });
 });
 
+// get attended events
+router.get('/attend', (req, res) => {
+    Attend.findAll({
+        attributes: [
+            'id',
+            'post_id',
+            'user_id'
+        ],
+        where: {
+            user_id: req.params.user_id
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Post,
+                attributes: ['event_title']
+            }
+        ]
+    })
+    .then(dbPostData => {
+        res.json(dbPostData);
+   })
+   .catch(err => {
+       console.log(err);
+       res.status(500).json(err);
+     });
+});
+
 // get a single post
 router.get('/:id', (req, res) => {
     Post.findOne({
