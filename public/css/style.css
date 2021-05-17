@@ -572,7 +572,7 @@ stafftion {
     margin: 1%;
 }
 
-.staff-pick {
+.staff-pick, .featured-event {
     color: white;
     padding: 0;
     margin: 0;

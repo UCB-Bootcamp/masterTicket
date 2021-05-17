@@ -9,6 +9,7 @@ async function newFormHandler(event) {
     const genre = document.querySelector('input[id="genre"]').value;
     const date = document.querySelector('input[id="date"]').value;
     const staff_pick = document.querySelector('input[id="staff-pick"]').checked;
+    const featured_event = document.querySelector('input[id="featured-event"]').checked;
     const event_description = document.querySelector('textarea[id="event-description"]').value;
     console.log(staff_pick);
     const response = await fetch(`/api/posts`, {
@@ -21,6 +22,7 @@ async function newFormHandler(event) {
             genre,
             date,
             staff_pick,
+            featured_event,
             event_description
         }),
         headers: {

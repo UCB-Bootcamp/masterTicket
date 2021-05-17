@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
                 'genre',
                 'event_description',
                 'staff_pick',
+                'featured_event',
                 'date'
             ],
             include: [
