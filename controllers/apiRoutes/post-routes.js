@@ -15,14 +15,9 @@ router.get('/', (req, res) => {
             'event_description',
             'staff_pick',
             'featured_event',
-            'created_at'//,
-            //[sequelize.literal('(SELECT COUNT(*) FROM users WHERE post.id = vote.post_id)'), 'vote_count']
+            'created_at'
         ],
         include: [
-            {
-                model: User,
-                attributes: ['username']
-            },
             {
               model: User,
               attributes: ['username']
@@ -51,7 +46,8 @@ router.get('/:id', (req, res) => {
             'event_description',
             'staff_pick',
             'featured_event',
-            'created_at'
+            'created_at',
+            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_count']
         ],
         where: { 
             id: req.params.id
