@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 
 // events that user posts
 router.get('/', (req, res) => {
+
+
     if(req.session.loggedIn) {
         Post.findAll({
             where: {
@@ -50,7 +52,7 @@ router.get('/', (req, res) => {
 });
 
 // upcoming events that we want to attend
-router.get('/', (req, res) => {
+router.get('/attend', (req, res) => {
     if(req.session.loggedIn) {
         Attend.findAll({
             where: {
