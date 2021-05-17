@@ -34,15 +34,20 @@
         </div>
     </div>
 </section>
-{{!-- {{#if attending}}
+
 <section class="container">
-    <h5 class="main-title text-center">--Your Events--</h5>
-    {{#each attending as |event| }}
-    <div class="cards col-md-6 col-lg-3 ">
-        {{> post-info event }}
-    </div>
-    {{/each}}
+    <h5 class="main-title text-center">--Your Plans--</h5>
+    {{!-- events they are attending --}}
+    {{#if attending}}
+        {{#each attending as |event| }}
+        <div class="cards col-md-6 col-lg-3 ">
+            {{> post-info event }}
+        </div>
+        {{/each}}
+    {{else}}
+    <p class="plans">You're not attending any events yet :(</p>
+    {{/if}}
 </section>
-{{/if}} --}}
+
 
 <script src="/js/add-post.js"></script>

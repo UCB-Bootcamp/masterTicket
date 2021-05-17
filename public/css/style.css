@@ -19,6 +19,7 @@ a:hover {
 
 .container {
     max-width: 95%;
+    margin-top: 3%;
 }
 
 /* ul {
@@ -584,4 +585,10 @@ stafftion {
 .list-group-item {
     background-color: #323336;
     color: #fff;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    
 }
