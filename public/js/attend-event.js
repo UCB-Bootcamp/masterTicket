@@ -14,9 +14,11 @@ async function attendClickHandler(event) {
     });
 
     if(response.ok) {
+        console.log('bleh');
         document.location.reload();
     } else {
         alert(response.statusText);
     }
 };
 
+document.querySelector('#attend').addEventListener('click', attendClickHandler);
