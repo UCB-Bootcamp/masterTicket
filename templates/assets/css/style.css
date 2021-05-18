@@ -19,7 +19,6 @@ a:hover {
 
 .container {
     max-width: 95%;
-    margin-top: 3%;
 }
 
 /* ul {
@@ -323,11 +322,6 @@ form .error {
     color: #ff0000;
 }
 
-.topBefore {
-    display: flex;
-    flex-direction: column;
-}
-
 /* LOGO */
 .logo-part {
     border-right: 1px solid grey;
@@ -549,38 +543,8 @@ stafftion {
     background-color: #323336;
  }
 
-#staff-picks {
-    display: inline-flex;
-    justify-content: space-evenly;
-}
-
-/* DASHBOARD */
-
-.new-post-form {
-    width: 50%;
-}
-
-.topBefore input {
-    margin: 1%;
-}
-
-.staff-pick, .featured-event {
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
-.row.dashboard-posts {
-   margin: 0 auto;
-}
-
-.list-group-item {
-    background-color: #323336;
-    color: #fff;
-}
-
-.plans {
-    display: flex;
-    justify-content: center;
-    
+@media only screen and (max-width: 767px) {
+    #second {
+        padding-top: 30px;
+    }
 }
