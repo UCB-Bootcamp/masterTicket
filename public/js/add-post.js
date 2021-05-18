@@ -1,11 +1,5 @@
-const getEventImage = (eventTitle) => {
-	const ticketmasterApiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${env.TICKETMASTER_API_KEY}&keyword=${eventTitle}`;
-	fetch(ticketmasterApiUrl).then(function(response){
-		response.json().then(function(data){
-			let eventImage = data.results[0].urls.raw;
-		})
-	})
-};
+
+
 
 // NOT CONNECTED TO FRONT END
 async function newFormHandler(event) {
@@ -36,7 +30,7 @@ async function newFormHandler(event) {
         }
     });
     if(response.ok) {
-        console.log('sucess')
+        console.log('success')
         document.location.reload();
     } else {
         alert(response.statusText);
