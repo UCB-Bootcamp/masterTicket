@@ -29,9 +29,9 @@
             <ul class="card-body list-group list-group-flush">
                 {{#each posts as |post|}}
                 <li class="list-group-item">
-                    <h4>{{event_title}}</h4>
+                    <h4>{{posts.event_title}}</h4>
                     <span>{{date}} |</span>
-                    <p>{{attend_events}} people are attending this event!</p>
+                    <p>{{attend_count}} people are attending this event!</p>
                     <a href="/post/{{id}}">view post</a>
                 </li>
                 {{/each}}
@@ -43,15 +43,16 @@
 <section class="container">
     <h5 class="main-title text-center">--Your Plans--</h5>
     {{!-- events they are attending --}}
-    {{#if attending}}
-        {{#each attending as |event| }}
+    {{!-- {{#if attending}} --}}
+        {{!-- {{#each attend as |post| }} --}}
         <div class="cards col-md-6 col-lg-3 ">
-            {{> post-info event }}
+            {{ post_id }}
+            {{> post-info post }}
         </div>
-        {{/each}}
-    {{else}}
+        {{!-- {{/each}} --}}
+    {{!-- {{else}} --}}
     <p class="plans">You're not attending any events yet :(</p>
-    {{/if}}
+    {{!-- {{/if}} --}}
 </section>
 
 <script src="/js/add-post.js"></script>

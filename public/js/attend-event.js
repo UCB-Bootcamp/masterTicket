@@ -1,4 +1,4 @@
-async function attendClickHandler() {
+async function attendClickHandler(e) {
     event.preventDefault();
     const post_id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
 
@@ -11,11 +11,14 @@ async function attendClickHandler() {
             'Content-Type': 'application/json'
         }
     });
-
+    console.log(e)
     if(response.ok) {
         document.location.reload();
+        
     } else {
-        alert(response.statusText);
+        alert('You are already attending this event');
+        var btn = $(e.target);
+        btn.attr("disabled", "disabled");
     }
 };
 

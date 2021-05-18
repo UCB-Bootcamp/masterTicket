@@ -4,10 +4,8 @@ const sequelize = require('../config/connection');
 
 // events that user posts
 router.get('/', (req, res) => {
-
-
     if(req.session.loggedIn) {
-        Post.findAll({
+        const posts = Post.findAll({
             where: {
                 user_id: req.session.user_id
             },
@@ -32,29 +30,9 @@ router.get('/', (req, res) => {
                     attributes: ['username']
                 }
             ]
-        })
-            .then(dbPostData => {
-                const posts = dbPostData.map(post => post.get({ plain: true }));
-                console.log(posts);
-                res.render('dashboard', {
-                    posts,
-                    loggedIn: req.session.loggedIn
-                });
-    
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    } else {
-        res.redirect('/login');
-    }
-});
+        });
 
-// upcoming events that we want to attend
-router.get('/attend', (req, res) => {
-    if(req.session.loggedIn) {
-        Attend.findAll({
+        const attend_events = Attend.findAll({
             where: {
                 user_id: req.session.user_id,
             },
@@ -63,26 +41,23 @@ router.get('/attend', (req, res) => {
                 'post_id',
                 'user_id'
             ]
-        })
-            .then(dbAttendData => {
-                const attendEvents = dbAttendData.map(attend => attend.get({ plain: true }));
-                console.log(attendEvents);
+        });
+        Promise
+            .all([posts, attend_events])
+            .then(responses => {
+                console.log(responses[0]);
+                console.log(responses[1]);
+
+                const posts = responses[0].map(post => post.get({ plain: true }));
+                const attend_events = responses[1].map(post => post.get({ plain: true }));
+
                 res.render('dashboard', {
-                    attendEvents,
+                    posts,
+                    attend_events,
                     loggedIn: req.session.loggedIn
                 });
-    
             })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    } else {
-        res.redirect('/login');
     }
 });
-
-
-
 
 module.exports = router;
