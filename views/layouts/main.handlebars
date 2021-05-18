@@ -12,7 +12,6 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  {{!-- <link rel="manifest" href="site.webmanifest"> --}}
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -43,9 +42,8 @@
           </div>
           <div class="row d-flex justify-content-around text-center">
             <ul>
-              <li><a href="#new-events">new events</a></li>
-              <li><a href="#featured">featured</a></li>
-              <li><a href="#staff-picks">staff picks</a></li>
+              <li><a href="/">home</a></li>
+              <li><a href="/#featured">featured</a></li>
               <li><a href="/dashboard">dashboard</a></li>
               {{#if loggedIn}}
               <li id="logout">logout</li>
@@ -144,15 +142,6 @@
   <script src="/js/logout.js"></script>
   {{/if}}
   <script src="/js/script.js"></script>
-
-  <!-- DID YOU REMEMBER THIS SECTION? -->
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <!-- <script>
-            window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-            ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async></script> -->
 
 </body>
 

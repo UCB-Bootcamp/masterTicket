@@ -75,10 +75,6 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        staff_pick: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
         featured_event: {
             type: DataTypes.BOOLEAN,
             allowNull: true

@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
                 'band',
                 'genre',
                 'event_description',
-                'staff_pick',
                 'featured_event',
                 'date',
                 [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
@@ -53,7 +52,6 @@ router.get('/', (req, res) => {
                         'band',
                         'genre',
                         'event_description',
-                        'staff_pick',
                         'featured_event',
                         'date'
                     ]
