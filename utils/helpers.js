@@ -1,8 +1,8 @@
 module.exports = {
     pluralize_people: amount => {
         if(amount === 1) {
-            return 'person';
+            return `${amount} person`;
         }
-        return 'people';
+        return `${amount} people`;
     }
 }
