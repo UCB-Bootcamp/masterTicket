@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 'featured_event',
                 'date',
                 [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
-                    'attend_events']
+                    'attend_count']
             ],
             include: [
                 {
@@ -40,14 +40,29 @@ router.get('/', (req, res) => {
                 'id',
                 'post_id',
                 'user_id'
+            ],
+            include: [
+                {
+                    model: Post,
+                    attributes: [
+                        'id',
+                        'event_title',
+                        'user_id',
+                        'venue',
+                        'city',
+                        'band',
+                        'genre',
+                        'event_description',
+                        'staff_pick',
+                        'featured_event',
+                        'date'
+                    ]
+                }
             ]
         });
         Promise
             .all([posts, attend_events])
             .then(responses => {
-                console.log(responses[0]);
-                console.log(responses[1]);
-
                 const posts = responses[0].map(post => post.get({ plain: true }));
                 const attend_events = responses[1].map(post => post.get({ plain: true }));
 
