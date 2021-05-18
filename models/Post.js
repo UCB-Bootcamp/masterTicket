@@ -81,7 +81,7 @@ Post.init(
         },
         featured_event: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         },
         date: {
             type: DataTypes.STRING,

@@ -15,14 +15,9 @@ router.get('/', (req, res) => {
             'event_description',
             'staff_pick',
             'featured_event',
-            'created_at'//,
-            //[sequelize.literal('(SELECT COUNT(*) FROM users WHERE post.id = vote.post_id)'), 'vote_count']
+            'created_at'
         ],
         include: [
-            {
-                model: User,
-                attributes: ['username']
-            },
             {
               model: User,
               attributes: ['username']
@@ -38,6 +33,37 @@ router.get('/', (req, res) => {
       });
 });
 
+// get attended events
+router.get('/attend', (req, res) => {
+    Attend.findAll({
+        attributes: [
+            'id',
+            'post_id',
+            'user_id'
+        ],
+        where: {
+            user_id: req.params.user_id
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Post,
+                attributes: ['event_title']
+            }
+        ]
+    })
+    .then(dbPostData => {
+        res.json(dbPostData);
+   })
+   .catch(err => {
+       console.log(err);
+       res.status(500).json(err);
+     });
+});
+
 // get a single post
 router.get('/:id', (req, res) => {
     Post.findOne({
@@ -51,7 +77,8 @@ router.get('/:id', (req, res) => {
             'event_description',
             'staff_pick',
             'featured_event',
-            'created_at'
+            'created_at',
+            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_count']
         ],
         where: { 
             id: req.params.id
@@ -99,10 +126,16 @@ router.post('/', (req, res) => {
 
 // attending an event
 router.put('/attend', (req, res) => {
-    Post.attend(req.body, {Attend, User})
-    .then(dbAttendData => res.json(dbAttendData))
-    .catch(err => res.status(500).json(err));
-});
+    // make sure the session exists first
+    if (req.session) {
+      Post.attend({ ...req.body, user_id: req.session.user_id }, { Attend, User })
+        .then(updatedAttendData => res.json(updatedAttendData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    }
+  });
 
 // update a post
 router.put('/:id', (req, res) => {

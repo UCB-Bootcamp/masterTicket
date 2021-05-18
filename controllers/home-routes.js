@@ -71,7 +71,7 @@ router.get('/add-event', (req, res) => {
             'staff_pick',
             'featured_event',
             'date',
-            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_events']
+            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_count']
         ],
         include: [
             {
@@ -89,8 +89,8 @@ router.get('/add-event', (req, res) => {
         const post = dbPostData.get({ plain: true });
         // pass data to template
         res.render('single-post', {
-          post
-         // loggedIn: req.session.loggedIn
+          post,
+         loggedIn: req.session.loggedIn
         });
       })
       .catch(err => {
