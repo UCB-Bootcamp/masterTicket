@@ -14,18 +14,14 @@
                     <p class="desc">{{post.event_description}}</p>
                     <a href="https://www.imdb.com/title/tt4912910/" target="_blank">Read More</a>
                     <div class="social-btn">
-                    {{!-- Place holder for NPM music player --}}
-                        <button>
-                            <i class="bi bi-play"></i> HEAR MUSIC
-                        </button>
 
                     {{!-- Make into a span to display the attendance count? --}}
                         <button>
-                            <i class="bi bi-thumbs-up"></i>ATTENDING?
+                            <i class="bi bi-thumbs-up"></i>{{post.attend_count}} People are attending this event!
                         </button>
 
                     {{!-- Proper attending icon  --}}
-                        <button>
+                        <button class="attend">
                             <i class="bi bi-thumbs-up"></i>ATTENDING?
                         </button>
                     </div>	
@@ -40,3 +36,4 @@
     </div>
 </section>
 
+<script src="/js/attend-event.js"></script>

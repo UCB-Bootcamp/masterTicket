@@ -2,12 +2,10 @@ const { Post, Attend, User } = require('../models');
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 
-// upcoming events that we want to attend
-
 // events that user posts
 router.get('/', (req, res) => {
     if(req.session.loggedIn) {
-        Post.findAll({
+        const posts = Post.findAll({
             where: {
                 user_id: req.session.user_id
             },
@@ -21,7 +19,10 @@ router.get('/', (req, res) => {
                 'genre',
                 'event_description',
                 'staff_pick',
-                'date'
+                'featured_event',
+                'date',
+                [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
+                    'attend_count']
             ],
             include: [
                 {
@@ -29,22 +30,48 @@ router.get('/', (req, res) => {
                     attributes: ['username']
                 }
             ]
-        })
-            .then(dbPostData => {
-                const posts = dbPostData.map(post => post.get({ plain: true }));
-                console.log(posts);
+        });
+
+        const attend_events = Attend.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            attributes: [
+                'id',
+                'post_id',
+                'user_id'
+            ],
+            include: [
+                {
+                    model: Post,
+                    attributes: [
+                        'id',
+                        'event_title',
+                        'user_id',
+                        'venue',
+                        'city',
+                        'band',
+                        'genre',
+                        'event_description',
+                        'staff_pick',
+                        'featured_event',
+                        'date'
+                    ]
+                }
+            ]
+        });
+        Promise
+            .all([posts, attend_events])
+            .then(responses => {
+                const posts = responses[0].map(post => post.get({ plain: true }));
+                const attend_events = responses[1].map(post => post.get({ plain: true }));
+
                 res.render('dashboard', {
                     posts,
+                    attend_events,
                     loggedIn: req.session.loggedIn
                 });
-    
             })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    } else {
-        res.redirect('/login');
     }
 });
 
