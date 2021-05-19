@@ -22,12 +22,6 @@ a:hover {
     margin-top: 3%;
 }
 
-/* ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-} */
-
 /* CARD */
 .cards {
     margin-bottom: 30px;
@@ -185,7 +179,11 @@ a:hover {
 
 .carousel-item img {
     margin: auto;
-    max-height: 500px;
+    max-height: 600px;
+}
+
+.w-100 {
+    width: 75%!important;
 }
 
 .sr-only {
