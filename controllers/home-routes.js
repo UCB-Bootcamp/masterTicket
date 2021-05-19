@@ -15,8 +15,9 @@ router.get('/', (req, res) => {
             'band',
             'genre',
             'event_description',
-            'staff_pick',
-            'date'
+            'featured_event',
+            'date',
+            'image'
         ],
         include: [
             {
@@ -48,12 +49,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// add-event page - might turn into a modal?
-router.get('/add-event', (req, res) => {
-    // this is going to need to be updated when we get partials going
-    res.sendFile(path.join(__dirname, '../templates', 'form.html'));
-});
-
   router.get('/post/:id', (req, res) => {
       Post.findOne({
         where: {
@@ -68,10 +63,10 @@ router.get('/add-event', (req, res) => {
             'band',
             'genre',
             'event_description',
-            'staff_pick',
             'featured_event',
             'date',
-            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'), 'attend_count'],
+            'image'
         ],
         include: [
             {

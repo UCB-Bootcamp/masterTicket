@@ -19,8 +19,13 @@ a:hover {
 
 .container {
     max-width: 95%;
-    margin-top: 3%;
 }
+
+/* ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+} */
 
 /* CARD */
 .cards {
@@ -179,11 +184,7 @@ a:hover {
 
 .carousel-item img {
     margin: auto;
-    max-height: 600px;
-}
-
-.w-100 {
-    width: 75%!important;
+    max-height: 500px;
 }
 
 .sr-only {
@@ -299,16 +300,17 @@ footer .social-btn button {
     width: 100%;
     pointer-events: auto;
     background-clip: padding-box;
+    border: 1px solid rgba(255,255,255,1);
     outline: 0;
     max-width: 500px;
     min-height: 395px;
 }
 
-.login-form label, .signup-form label {
+.login-form label {
     color: white;
 }
 
- .login-form .social-btn button, .signup-form .social-btn button {
+ .login .social-btn button {
     background-color: #323336;
  }
 
@@ -318,11 +320,6 @@ footer .social-btn button {
 
 form .error {
     color: #ff0000;
-}
-
-.topBefore {
-    display: flex;
-    flex-direction: column;
 }
 
 /* LOGO */
@@ -546,38 +543,8 @@ stafftion {
     background-color: #323336;
  }
 
-#staff-picks {
-    display: inline-flex;
-    justify-content: space-evenly;
-}
-
-/* DASHBOARD */
-
-.new-post-form {
-    width: 50%;
-}
-
-.topBefore input {
-    margin: 1%;
-}
-
-.staff-pick, .featured-event {
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
-.row.dashboard-posts {
-   margin: 0 auto;
-}
-
-.list-group-item {
-    background-color: #323336;
-    color: #fff;
-}
-
-.plans {
-    display: flex;
-    justify-content: center;
-    
+@media only screen and (max-width: 767px) {
+    #second {
+        padding-top: 30px;
+    }
 }
