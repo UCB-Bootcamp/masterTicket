@@ -1,4 +1,3 @@
-// NOT CONNECTED TO FRONT END
 async function newFormHandler(event) {
     event.preventDefault();
 
@@ -27,12 +26,11 @@ async function newFormHandler(event) {
         }
     });
     if(response.ok) {
-        console.log('sucess')
+        console.log('success')
         document.location.reload();
     } else {
         alert(response.statusText);
     }
 };
-
 
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);

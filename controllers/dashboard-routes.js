@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
                 'featured_event',
                 'date',
                 [sequelize.literal('(SELECT COUNT(*) FROM attend WHERE post.id = attend.post_id)'),
-                    'attend_count']
+                    'attend_count'],
+                'image'
             ],
             include: [
                 {
@@ -53,7 +54,8 @@ router.get('/', (req, res) => {
                         'genre',
                         'event_description',
                         'featured_event',
-                        'date'
+                        'date',
+                        'image'
                     ]
                 }
             ]

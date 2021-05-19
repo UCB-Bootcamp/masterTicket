@@ -12,7 +12,6 @@
                         <p class="city">{{post.city}}</p>
                     </div>
                     <p class="desc">{{post.event_description}}</p>
-                    <a href="https://www.imdb.com/title/tt4912910/" target="_blank">Read More</a>
                     <div class="social-btn">
 
                     {{!-- Make into a span to display the attendance count? --}}
@@ -29,7 +28,7 @@
             </div>
             <div class="post-right">
                 <div class="img-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/f/ff/MI_%E2%80%93_Fallout.jpg" alt="">
+                    <img src="{{ post.image }}" alt="">
                 </div>
             </div>
         </div>
@@ -37,3 +36,4 @@
 </section>
 
 <script src="/js/attend-event.js"></script>
+<>
