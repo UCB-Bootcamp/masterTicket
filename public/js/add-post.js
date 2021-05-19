@@ -1,7 +1,3 @@
-
-
-
-// NOT CONNECTED TO FRONT END
 async function newFormHandler(event) {
     event.preventDefault();
 

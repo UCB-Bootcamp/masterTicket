@@ -6,14 +6,14 @@
       <span class="card-time">{{ date }}</span>
     </div>
     <div class="goto">
-      <button> <a href='/post/{{id}}'>checkout post</a></button>
+      <button> <a href='/post/{{ id }}'>checkout post</a></button>
     </div>
   </div>
   <div class="card-img">
-    <img src="{{{eventImage}}}" />
+    <img src="{{ image }}" />
   </div>
   <div class="card-img-hover">
-    <img src="/pictures/concert1.jpeg" />
+    <img src="{{ image }}" />
   </div>
   <div class="card-info">
     <span class="card-category">{{ band }}</span>
@@ -22,4 +22,3 @@
   </div>
 </article>
 
-<script src="/js/get-image.js"></script>

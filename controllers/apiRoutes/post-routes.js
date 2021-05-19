@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Attend } =  require('../../models');
 const { sequelize } = require('../../models/User');
+const fetch = require('node-fetch');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -71,7 +72,14 @@ router.get('/:id', (req, res) => {
     });
 
 // add a post
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    const ticketmasterApiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${process.env.TICKETMASTER_API_KEY}&keyword=${req.body.event_title}`;
+    console.log(ticketmasterApiUrl);
+    const response = await fetch(ticketmasterApiUrl);
+    const data = await response.json();
+    console.log(data);
+	const eventImage = data._embedded.events[0].images[1].url;
+    
     Post.create({
         event_title: req.body.event_title,
         venue: req.body.venue,
@@ -81,7 +89,8 @@ router.post('/', (req, res) => {
         event_description: req.body.event_description,
         featured_event: req.body.featured_event,
         date: req.body.date,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        image: eventImage
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
