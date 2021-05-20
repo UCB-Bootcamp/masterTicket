@@ -73,7 +73,7 @@ router.get('/:id', (req, res) => {
 
 // add a post
 router.post('/', async (req, res) => {
-    const ticketmasterApiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${process.env.TICKETMASTER_API_KEY}&keyword=${req.body.event_title}`;
+    const ticketmasterApiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=NGd8HrNruslnXzzHUQ8AgAA0Eyc5zVu6&keyword=${req.body.event_title}`;
     console.log(ticketmasterApiUrl);
     const response = await fetch(ticketmasterApiUrl);
     const data = await response.json();
