@@ -29,6 +29,28 @@ If you'd like to contribute to this project, please contact one of the developer
 There are currently no tests for this project.
 
 ## Questions
-If you have any questions, please feel free to reach out to the contact below:
-Contact: 
-[TimWeyel](https://github.com/TimWeyel) at their [email](mailto:%20tweyel@gmail.com) </br>
+If you have any questions, please feel free to reach out to the contacts below:
+<br>
+[Tim Weyel](https://github.com/TimWeyel) at their [email](mailto:%20tweyel@gmail.com) <br>
+[Shy Gois](https://github.com/Shygois) at their [email](mailto:shayana.gois@att.net)
+<br>
+[Sydney Walcoff](https://github.com/sydneywalcoff) at their [email](mailto:sydney.walcoff@gmail.com)
+<br>
+[Leah Russell](https://github.com/squidbeaks) at their [email](mailto:leahsigridrussell@gmail.com)
+<br>
+[Carlos Vadillo](https://github.com/cvadillo) at their [email](mailto:cavarod@gmail.com)
+
+## Screenshots
+1. Login or signup for masterTicket
+![image](https://user-images.githubusercontent.com/77821135/118913331-1afd7200-b8de-11eb-936f-2c6152af61ab.png)
+
+2. Once you've successfully logged in you'll be directed to your dashboard where you can create a post, view all your existing posts, and see the events you plan to attend
+![image](https://user-images.githubusercontent.com/77821135/118913547-85aead80-b8de-11eb-95b0-190c3bf08f46.png)
+
+3. Homepage view
+![image](https://user-images.githubusercontent.com/77821135/118913968-4af94500-b8df-11eb-89d0-025f9464789e.png)
+
+4. To attend an event, click into the post and select the "Attending?" button
+![image](https://user-images.githubusercontent.com/77821135/118914393-fdc9a300-b8df-11eb-93b0-aabb4fddc7a0.png)
+
+
