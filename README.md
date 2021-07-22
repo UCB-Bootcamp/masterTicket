@@ -14,7 +14,7 @@
 6. [Questions](#questions)
 
 ## Usage
-masterTicket is used by music enthusiasts to find the music events that interest them most.
+masterTicket is used by music enthusiasts to find the music events that interest them most. You can visit the app [here](http://masterticket.herokuapp.com/).
 
 ## License
 Covered by the MIT license.
